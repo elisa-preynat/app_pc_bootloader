@@ -24,11 +24,11 @@ public class AppPcBootloaderApplication {
 		
 		downloadBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				try (FileInputStream pathFile = new FileInputStream("D:\\Documents\\testtelechargement.bin")) {
+				try (FileInputStream pathFile = new FileInputStream("C:\\Users\\elisa.preynat\\STM32CubeIDE\\workspace_1.8.0\\BootLoader\\Debug\\BootLoader.bin")) {
 					ReadableByteChannel readableByteChannel = Channels.newChannel(pathFile);
 
 					try (FileOutputStream fos = new FileOutputStream(
-							"D:\\Documents\\Téléchargements\\Test_Telechargement\\testtelechargementDOWN.bin")) {
+							"D:\\Documents\\Téléchargements\\Bootloader.bin")) {
 						fos.getChannel().transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
 						System.out.println("Le fichier .bin se trouve dans votre dossier téléchargement.");
 						
